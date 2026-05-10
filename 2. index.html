@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home Automation Control Panel</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #00ff99;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        button {
+            background-color: #00cc77;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #009955;
+        }
+        .container {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Home Automation</h1>
+        <form action="/predict" method="POST">
+            <label for="temperature">Temperature (°C):</label><br />
+            <input type="number" id="temperature" name="temperature" step="0.1" required /><br />
+
+            <label for="humidity">Humidity (%):</label><br />
+            <input type="number" id="humidity" name="humidity" step="0.1" required /><br />
+
+            <label for="light">Light Intensity (lux):</label><br />
+            <input type="number" id="light" name="light" step="1" required /><br />
+
+            <label for="motion">Motion Detected:</label><br />
+            <select id="motion" name="motion" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br />
+
+            <button type="submit">Get Automation Suggestion</button>
+        </form>
+    </div>
+</body>
+</html>
